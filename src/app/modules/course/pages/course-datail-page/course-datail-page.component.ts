@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseDatailPageComponent implements OnInit {
 
+  course: any;
+
   constructor() { }
 
   ngOnInit(): void {
