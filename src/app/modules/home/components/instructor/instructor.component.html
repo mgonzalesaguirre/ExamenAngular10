@@ -1,7 +1,9 @@
-<div class="card" style="width: 18rem;" *ngFor="let item of instructor">
-    <img class="card-img-top" src="{{ item.image }}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{ item.name }} {{ item.lastName }}</h5>
-      <p class="card-text">{{ item.educationTitle }}</p>
+<div class="col-9">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{ instructor.image }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ instructor.name }} {{ instructor.lastName }}</h5>
+            <p class="card-text">{{ instructor.educationTitle }}</p>
+        </div>
     </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { TypecourseService } from '../../services/typecourse.service';
 import { IType } from '../course-type-container/interfaces/type';
 
 @Component({
@@ -12,22 +13,18 @@ export class CourseTypeContainerComponent implements OnInit {
 
   @Input() type: IType;
 
-  constructor() { }
+  constructor(private typecourseserv: TypecourseService) { 
+
+  }
 
   ngOnInit(): void {
-    this.listCourseType = [
-      {
-        id: 1,
-        name: 'Diseño'
-      },
-      {
-        id: 2,
-        name: 'Desarrollo'
-      },
-      {
-        id: 3,
-        name: 'Tecnologías de la Información'
-      }
-    ];
+    this.getCourseTop();
+  }
+
+  getCourseTop(){
+    this.typecourseserv.getTypeCourse()
+    .subscribe((res: IType[]) => {
+      this.listCourseType = res;
+    });
   }
 }

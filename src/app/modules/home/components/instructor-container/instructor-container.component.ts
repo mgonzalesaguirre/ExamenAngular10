@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IInstructor } from '../../interfaces/instructor';
+import { InstructorService } from '../../services/instructor.service';
 
 @Component({
   selector: 'app-instructor-container',
@@ -7,12 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InstructorContainerComponent implements OnInit {
 
-  listInstructor: any[];
+  listInstructor: IInstructor[];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private instserv: InstructorService) { 
 
   }
 
+  ngOnInit(): void {
+    this.getInstructor();
+  }
+
+  getInstructor(){
+    this.instserv.getInstructor()
+    .subscribe((res: IInstructor[]) => {
+      this.listInstructor = res;
+    });
+  }
+
 }
+

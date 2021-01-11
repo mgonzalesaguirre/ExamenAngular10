@@ -1,8 +1,10 @@
-<div class="card" style="width: 18rem;" *ngFor="let item of course">
-    <img class="card-img-top" src="{{ item.image }}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{ item.name }}</h5>
-      <p class="card-text">{{ item.summary }}</p>
-      <a href="/course/{{ item.id }}" class="btn btn-primary">Ver Detalle</a>
+<div class="col-9">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{ course.image }}" alt="Card image cap">
+        <div class="card-body">
+        <h5 class="card-title">{{ course.name }}</h5>
+        <p class="card-text">{{ course.summary.substring(0,150) }}...</p>
+        <a href="/course/{{ course.id }}" class="btn btn-primary">Ver Detalle</a>
+        </div>
     </div>
 </div>

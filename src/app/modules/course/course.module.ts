@@ -7,6 +7,7 @@ import { CourseDatailPageComponent } from './pages/course-datail-page/course-dat
 import { CoursecontainerComponent } from './components/coursecontainer/coursecontainer.component';
 import { CourseTypeContainerComponent } from './components/course-type-container/course-type-container.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { TypecourseService } from './services/typecourse.service';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommonModule,
     CourseRoutingModule,
     SharedModule
-  ]
+  ],
+  providers: [TypecourseService]
 })
 export class CourseModule { }

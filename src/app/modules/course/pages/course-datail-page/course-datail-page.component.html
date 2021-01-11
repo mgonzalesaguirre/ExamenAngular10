@@ -1,4 +1,13 @@
 <div class="container">
     <img src="../../../../../assets/images/coursename.jpg" style="width: 100%;">
-    <app-course [course]="course"></app-course>
+    <div class="card" style="width: 100%">
+        <div class="card-body">
+            <h5 class="card-title">{{ course.name }}</h5>
+            <p class="card-text">
+            <img src="{{ course.image }}" style="width: 300px;" align="left" hspace="5">
+            {{ course.summary }}</p>
+            <p class="card-text"><b>Duración:</b> {{ course.duration }}</p>
+            <p class="card-text"><b>Sesiones:</b> {{ course.lessons }}</p>
+        </div>
+    </div>
 </div>

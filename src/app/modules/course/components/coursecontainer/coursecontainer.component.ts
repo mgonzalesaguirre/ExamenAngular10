@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseTopService } from 'src/app/modules/home/services/course-top.service';
+import { ICourse } from 'src/app/shared/components/course/interfaces/course';
 
 @Component({
   selector: 'app-coursecontainer',
@@ -7,11 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursecontainerComponent implements OnInit {
 
-  listCourse: any[] = [];
+  listCourse: ICourse[];
 
-  constructor() { }
+  constructor(private courseserv: CourseTopService) { 
+
+  }
 
   ngOnInit(): void {
+    this.getCourse();
+  }
+
+  getCourse(){
+    this.courseserv.getCourses()
+    .subscribe((res: ICourse[]) => {
+      this.listCourse = res;
+    });
   }
 
 }

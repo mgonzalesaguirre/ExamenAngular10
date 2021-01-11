@@ -1,2 +1,5 @@
-<app-instructor [instructor]="listInstructor" [coverWidth]=200></app-instructor>
+<h5>INSTRUCTORES DESTACADOS</h5>
+<div class="row row-cols-1 row-cols-md-3 g-2">
+    <app-instructor *ngFor="let item of listInstructor" [instructor]="item" [coverWidth]=200></app-instructor>
+</div>
 <!--En éste commit también se incluyen las prefuntas 2c y 2d-->

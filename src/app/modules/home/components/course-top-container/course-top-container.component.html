@@ -1,1 +1,4 @@
-<app-course [course]="topCourse" [coverWidth]=200></app-course>
+<h5>CURSOS DESTACADOS</h5>
+<div class="row row-cols-1 row-cols-md-3 g-2">
+    <app-course *ngFor="let item of topCourses" [course]="item" [coverWidth]=200></app-course>
+</div>
