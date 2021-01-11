@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IType } from '../course-type-container/interfaces/type';
 
 @Component({
   selector: 'app-course-type-container',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseTypeContainerComponent implements OnInit {
 
+  listCourseType: IType[];
+
+  @Input() type: IType;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.listCourseType = [
+      {
+        id: 1,
+        name: 'Diseño'
+      },
+      {
+        id: 2,
+        name: 'Desarrollo'
+      },
+      {
+        id: 3,
+        name: 'Tecnologías de la Información'
+      }
+    ];
   }
-
 }

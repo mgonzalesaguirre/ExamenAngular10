@@ -1,7 +1,7 @@
 export interface ICourse {
     id: number;
     name: string;
-    feature: boolean;
+    featured: boolean;
     image: string;
     language: string;
     price: number;

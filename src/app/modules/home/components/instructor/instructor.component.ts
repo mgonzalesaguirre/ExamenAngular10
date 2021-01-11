@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { IInstructor } from '../instructor/interfaces/instructor';
 
 @Component({
   selector: 'app-instructor',
@@ -7,12 +8,19 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class InstructorComponent implements OnInit {
 
-  @Input() instructor: any[];
+  @Input() instructor: IInstructor[];
   @Input() coverWidth: number;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.instructor = [{
+        id: 2,
+        name: 'Ebed',
+        lastName: 'Guerra',
+        educationTitle: 'Desing Teacher',
+        image: 'http://examen-nh.jcramireztello.com/media/instructor/01.jpg'
+    }];
   }
 
 }

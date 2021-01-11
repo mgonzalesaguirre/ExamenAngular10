@@ -1,1 +1,8 @@
-Curso
+<div class="card" style="width: 18rem;" *ngFor="let item of course">
+    <img class="card-img-top" src="{{ item.image }}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ item.name }}</h5>
+      <p class="card-text">{{ item.summary }}</p>
+      <a href="/course/{{ item.id }}" class="btn btn-primary">Ver Detalle</a>
+    </div>
+</div>
